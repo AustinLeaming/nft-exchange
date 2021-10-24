@@ -15,7 +15,7 @@ nfts = [
     Nft('spongebob meme', 'Harry', 3)
 ]
 def home(request):
-    return HttpResponse('<h1>HOME PAGE</h1>')
+    return render(request, 'home.html')
     # ^ change to render when home page design comes in
 
 def nfts_index(request):
