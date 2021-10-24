@@ -1,0 +1,359 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 style="margin-top: 10%;"></h1>
+<section class="container mt-3">
+    <div class="jumbotron px-3 py-4 px-sm-4 py-sm-5 bg-light rounded-3 mb-3">
+        <h1 class="display-2">Welcome to Tokenize</h1>
+        <p class="lead">Developed by Creators For Creators</p>
+        <hr class="my-4">
+        <p class="display-6">Explore, discover, and collect NFT's on the worlds largest NFT marketplace</p>
+        <a class="btn btn-primary btn-lg" href="/nfts" role="button">Discover</a>
+    </div>
+</section>
+<div class="container">
+    <h2 class="text-center">Notable Collectibles</h2>
+
+
+    <div class="container py-3">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-lg-8 text-center text-lg-start mb-3 mb-lg-0">
+            <span class="h3">Show Products and Categories</span>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 text-center text-lg-end mb-3 mb-lg-0">
+            <div class="btn-group" role="group" aria-label="Product Toggle">
+                <a class="btn btn-secondary" data-bs-toggle="collapse" href="#productcat" role="button" aria-expanded="false" aria-controls="productcat">Categories</a>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#products" role="button" aria-expanded="true" aria-controls="products">Products</a>
+                <a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#" role="button" aria-expanded="false" data-bs-target=".multi-collapse" aria-controls="productcat products">Toggle</a>
+            </div>
+        </div>
+    </div>
+</div>
+<section id="productcat" class="collapse multi-collapse">
+  <div class="container py-5">
+    <div class="row pb-3">
+      <div class="col-12 text-start">
+        <h2 class="h4">Product Categories</h2>
+      </div>
+    </div>
+    <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+      <div class="col">
+        <div class="card card-product-category h-100 mb-2">
+          <div class="card-body">
+            <h3 class="card-title">Category 1</h3>
+            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, molestiae.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card card-product-category h-100 mb-2">
+          <div class="card-body">
+            <h3 class="card-title">Category 2</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, repellat rem at quisquam magnam quis voluptatibus nostrum, fuga facere voluptatum cupiditate ut natus ipsa iusto numquam beatae repudiandae error recusandae.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="products" class="collapse multi-collapse show">
+  <div class="container py-5">
+    <div class="row pb-3">
+      <div class="col-12 text-start">
+        <h2 class="h4">Latest Products</h2>
+      </div>
+    </div>
+    <div class="products row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 1</h2>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 2</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 3</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 4</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 5</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 6</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 7</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 8</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 9</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 10</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 11</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>      <div class="product col">
+        <div class="card card-product shadow-sm">
+          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+          <div class="card-body">
+            <h2 class="card-title">Product 12</h2>
+            <p class="card-text">lorem ipsum dolor sit namet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+    <section class="bg-light">
+        <div class="container pb-5">
+          <div class="row">
+            <div class="col-lg-5 mt-5">
+              <div class="card mb-3">
+                <img class="card-img img-fluid" src="" alt="Card image cap" id="product-detail">
+              </div>
+              <div class="row">
+                <!--Start Controls-->
+                <div class="col-1 align-self-center">
+                  <a href="#multi-item-example" role="button" data-bs-slide="prev">
+                    <i class="text-dark fas fa-chevron-left"></i>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </div>
+                <!--End Controls-->
+                <!--Start Carousel Wrapper-->
+                <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item pointer-event" data-bs-ride="carousel">
+                  <!--Start Slides-->
+                  <div class="carousel-inner product-links-wap" role="listbox">
+      
+                    <!--First slide-->
+                    <div class="carousel-item active">
+                      <div class="row">
+                        <div class="col-4">
+                          <a href="#">
+                            <img class="card-img img-fluid" src="" alt="Product Image 1">
+                          </a>
+                        </div>
+                        <div class="col-4">
+                          <a href="#">
+                            <img class="card-img img-fluid" src=" alt="Product Image 2">
+                          </a>
+                        </div>
+                        <div class="col-4">
+                          <a href="#">
+                            <img class="card-img img-fluid" src="" alt="Product Image 3">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!--/.First slide-->
+      
+                    <!--Second slide-->
+                    <div class="carousel-item">
+                      <div class="row">
+                        <div class="col-4">
+                          <a href="#">
+                            <img class="card-img img-fluid" src="" alt="Product Image 4">
+                          </a>
+                        </div>
+                        <div class="col-4">
+                          <a href="#">
+                            <img class="card-img img-fluid" src="" alt="Product Image 5">
+                          </a>
+                        </div>
+                        <div class="col-4">
+                          <a href="#">
+                            <img class="card-img img-fluid" src="" alt="Product Image 6">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!--/.Second slide-->
+      
+                    <!--Third slide-->
+                    <div class="carousel-item">
+                      <div class="row">
+                        <div class="col-4">
+                          <a href="#">
+                            <img class="card-img img-fluid" src="" alt="Product Image 7">
+                          </a>
+                        </div>
+                        <div class="col-4">
+                          <a href="#">
+                            <img class="card-img img-fluid" src="" alt="Product Image 8">
+                          </a>
+                        </div>
+                        <div class="col-4">
+                          <a href="#">
+                            <img class="card-img img-fluid" src="" alt="Product Image 9">
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <!--/.Third slide-->
+                  </div>
+                  <!--End Slides-->
+                </div>
+                <!--End Carousel Wrapper-->
+                <!--Start Controls-->
+                <div class="col-1 align-self-center">
+                  <a href="#multi-item-example" role="button" data-bs-slide="next">
+                    <i class="text-dark fas fa-chevron-right"></i>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+                <!--End Controls-->
+              </div>
+            </div>
+            <!-- col end -->
+            <div class="col-lg-7 mt-5">
+              <div class="card">
+                <div class="card-body">
+                  <h1 class="h2">Pokemon</h1>
+                  <p class="h3 py-2">Buy It Now: $2,500</p>
+                  <p class="h3 py-2">Starting Bid: $200</p>
+                  <p class="py-2">
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-warning"></i>
+                    <i class="fa fa-star text-secondary"></i>
+                    <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
+                  </p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <h6>Category: Animation</h6>
+                    </li>
+                    <li class="list-inline-item">
+
+                    </li>
+                  </ul>
+      
+                  <h6>Description:</h6>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <h6>Bid Ends in :</h6>
+                    </li>
+                    <li class="list-inline-item">
+
+                    </li>
+                  </ul>
+      
+                  <h6>Specification:</h6>
+                  <ul class="list-unstyled pb-3">
+                    <li>Lorem ipsum dolor sit</li>
+                    <li>Amet, consectetur</li>
+                    <li>Adipiscing elit,set</li>
+                    <li>Duis aute irure</li>
+                    <li>Ut enim ad minim</li>
+                    <li>Dolore magna aliqua</li>
+                    <li>Excepteur sint</li>
+                  </ul>
+      
+                  <form action="" method="GET">
+                    <input type="hidden" name="product-title" value="Activewear">
+                    <div class="row">
+                      <div class="col-auto">
+                        <ul class="list-inline pb-3">
+                          <li class="list-inline-item">Quantity:
+                            <input type="hidden" name="product-size" id="product-size" value="S">
+                          </li>
+                          <li class="list-inline-item"><span class="btn btn-success btn-size">1</span></li>
+                        </ul>
+                      </div>
+                      <div class="col-auto">
+                        <ul class="list-inline pb-3">
+                          <li class="list-inline-item text-right">
+                            Quantity
+                            <input type="hidden" name="product-quanity" id="product-quanity" value="1">
+                          </li>
+                          <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                          <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                          <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="row pb-3">
+                      <div class="col d-grid">
+                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
+                      </div>
+                      <div class="col d-grid">
+                        <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                      </div>
+                    </div>
+                  </form>
+      
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{% endblock %}
