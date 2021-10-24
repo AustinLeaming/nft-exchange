@@ -18,6 +18,7 @@ class Nft(models.Model):
     price = models.IntegerField()
     ffile = models.ImageField()
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
 
     def __str__(self):
         return self.title
@@ -38,5 +39,3 @@ class Comment(models.Model):
 
 
 nft = models.ForeignKey(Nft, on_delete=models.CASCADE)
-
-
