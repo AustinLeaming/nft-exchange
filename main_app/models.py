@@ -12,19 +12,20 @@ RATINGS = (
     ('5', 'Five'),
 )
 
+
 class Nft(models.Model):
     title = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     price = models.IntegerField()
     ffile = models.ImageField()
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
-    
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'nft_id': self.id})
+
 
 class Comment(models.Model):
     text = models.CharField(max_length=150)
@@ -34,8 +35,7 @@ class Comment(models.Model):
         default=RATINGS[0][0]
     )
 
-    
-
-
 
 nft = models.ForeignKey(Nft, on_delete=models.CASCADE)
+
+
