@@ -12,16 +12,16 @@
           </div>
           <div class="row">
             <!--Start Controls-->
-
           </div>
         </div>
         <!-- col end -->
         <div class="col-lg-7 mt-5">
           <div class="card">
             <div class="card-body">
-              <h1 class="h2">Pokemon</h1>
-              <p class="h3 py-2">Buy It Now: $2,500</p>
-              <p class="h3 py-2">Starting Bid: $200</p>
+              <h1 class="h2">{{ nft.title }} - *note for developers: add the user who created NFT here?</h1>
+              <p class="h3 py-2">Buy It Now: ${{ nft.price }}</p>
+              <!-- removed bidding element for now, need to implement for future use -->
+              <!-- <p class="h3 py-2">Starting Bid: $200</p> -->
               <p class="py-2">
                 <i class="fa fa-star text-warning"></i>
                 <i class="fa fa-star text-warning"></i>
@@ -31,15 +31,16 @@
                 <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
               </p>
               <ul class="list-inline">
-                <li class="list-inline-item">
+                <!-- <li class="list-inline-item">
+                  Do we keep the category? If so, we need to add that in the model
                   <h6>Category: Animation</h6>
-                </li>
+                </li> -->
                 <li class="list-inline-item">
 
                 </li>
               </ul>
   
-              <h6>Description:</h6>
+              <!-- <h6>Description:</h6>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
               <ul class="list-inline">
                 <li class="list-inline-item">
@@ -48,9 +49,9 @@
                 <li class="list-inline-item">
 
                 </li>
-              </ul>
+              </ul> -->
   
-              <h6>Specification:</h6>
+              <!-- <h6>Specification:</h6>
               <ul class="list-unstyled pb-3">
                 <li>Lorem ipsum dolor sit</li>
                 <li>Amet, consectetur</li>
@@ -59,7 +60,7 @@
                 <li>Ut enim ad minim</li>
                 <li>Dolore magna aliqua</li>
                 <li>Excepteur sint</li>
-              </ul>
+              </ul> -->
   
               <form action="" method="GET">
                 <input type="hidden" name="product-title" value="Activewear">
@@ -69,17 +70,16 @@
                 </div>
                 <div class="row pb-3">
                   <div class="col d-grid">
-                    <button type="submit" class="btn btn-dark btn-lg" name="submit" value="buy">Buy It Now</button>
+                    <a href="{% url 'nfts_update' nft.id %}" class="btn btn-dark btn-lg">Edit</a>
                   </div>
                   <div class="col d-grid">
-                    <button type="submit" class="btn btn-dark btn-lg" name="submit" value="addtocard">Make Offer</button>
+                    <a href="{% url 'nfts_delete' nft.id %}" class="btn btn-dark btn-lg">Delete</a>
                   </div>
                   <div class="col d-grid">
                     <button type="submit" class="btn btn-dark btn-lg" name="submit" value="addtocard">Place Bid</button>
                   </div>
                 </div>
               </form>
-  
             </div>
           </div>
         </div>
@@ -87,6 +87,7 @@
     </div>
   </section>
 
+<<<<<<< HEAD
   <div class="col-lg-7 mt-5 my-auto">
     <form action="">
       <div class="form-group">
@@ -99,14 +100,29 @@
   <div class="card mt-2 mb-2">
     <div class="card-header">
       Comments
+=======
+<!-- Comment Section -->
+
+  <form action="{% url 'add_comment' nft.id %}" method="POST">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <input type="submit" class="btn btn-primary" value='add comment'>
+  </form>
+  
+  {% for comment in nft.comment_set.all %}
+  <div class="card">
+    <div class="card-header">
+      Username: *maybe time stamp it?*
+>>>>>>> 406a99a3602b7fcab1865c1b16e51d51cc3ea29b
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        <p>{{ comment.text }}</p>
+        <p>{{ comment.rating }}</p>
       </blockquote>
     </div>
   </div>
+<<<<<<< HEAD
 </div>
 <!-- Comment Section -->
 
@@ -157,3 +173,7 @@
     </table>
   </div>
 </div> -->
+=======
+  {% endfor %}
+{% endblock %}
+>>>>>>> 406a99a3602b7fcab1865c1b16e51d51cc3ea29b
