@@ -3,7 +3,22 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from .models import Nft
 # Create your views here.
+
+class NftUpdate(UpdateView):
+    model = Nft
+    fields = ['price']
+
+class NftDelete(DeleteView):
+    model = Nft
+    success_url = '/nfts/'
+
+class NftCreate(CreateView):
+    model = Nft
+    fields = '__all__'
+    success_url = '/nfts/'
 
 def signup(request):
     error_message = ''
