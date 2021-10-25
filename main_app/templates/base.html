@@ -11,11 +11,16 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
+  <style>
+    footer{
+      color: rgba(255, 255, 255, 1);
+    }
+  </style>
 </head>
 <body>
   <div class="move-nav-bar"></div>
   <nav class="navbar">
-    <div class="brand-title"><a href="/">Tokenize</a></div>
+    <div class="brand-title"><i class="fas fa-coins me-3"></i><a href="/">Tokenize</a></div>
     <a href="#" class="toggle-button">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -45,7 +50,8 @@
     {% endblock %}
   </main>
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-muted">
+<footer class="text-center text-lg-start" style = "background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%); text-decoration: none;
+color: rgba(255, 255, 255, 0.7); margin-top: 100px;">
   <!-- Section: Social media -->
   <section
     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
@@ -90,7 +96,7 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <!-- Content -->
           <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Company name
+            <i class="fas fa-coins me-3"></i>Tokenize
           </h6>
           <p>
             Here you can use rows and columns to organize your footer content. Lorem ipsum
