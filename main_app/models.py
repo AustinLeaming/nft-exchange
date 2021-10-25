@@ -17,7 +17,7 @@ class Nft(models.Model):
     title = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     price = models.IntegerField()
-    ffile = models.ImageField()
+    file = models.ImageField()
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -34,8 +34,6 @@ class Comment(models.Model):
         choices=RATINGS,
         default=RATINGS[0][0]
     )
-
-
-nft = models.ForeignKey(Nft, on_delete=models.CASCADE)
+    nft = models.ForeignKey(Nft, on_delete=models.CASCADE)
 
 
