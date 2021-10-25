@@ -11,5 +11,6 @@ urlpatterns = [
     path('nfts/create/', views.NftCreate.as_view(), name='nfts_create'),
     path('nfts/<int:pk>/update/', views.NftUpdate.as_view(), name='nfts_update'),
     path('nfts/<int:pk>/delete/', views.NftDelete.as_view(), name='nfts_delete'),
+    path('nfts/<int:nft_id>/add_comment/', views.add_comment, name='add_comment'),
     path('accounts/signup/', views.signup, name='signup'),
 ]

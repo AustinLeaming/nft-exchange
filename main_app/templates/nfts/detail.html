@@ -87,18 +87,25 @@
     </div>
   </section>
 
+<!-- Comment Section -->
+
+  <form action="{% url 'add_comment' nft.id %}" method="POST">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <input type="submit" class="btn btn-primary" value='add comment'>
+  </form>
+  
+  {% for comment in nft.comment_set.all %}
   <div class="card">
     <div class="card-header">
-      Quote
+      Username: *maybe time stamp it?*
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        <p>{{ comment.text }}</p>
+        <p>{{ comment.rating }}</p>
       </blockquote>
     </div>
   </div>
-
-<!-- Comment Section -->
-
+  {% endfor %}
 {% endblock %}
