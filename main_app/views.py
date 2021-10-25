@@ -40,6 +40,10 @@ def home(request):
     return render(request, 'home.html')
     # ^ change to render when home page design comes in
 
+def nfts_detail(request, nft_id):
+    nft = Nft.objects.get(id=nft_id)
+    return render(request, 'nfts/detail.html', {'nft': nft})
+
 def nfts_index(request):
     nfts = Nft.objects.all()
     return render(request, 'nfts/index.html', {'nfts': nfts})
