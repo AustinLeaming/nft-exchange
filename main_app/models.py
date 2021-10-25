@@ -17,7 +17,7 @@ class Nft(models.Model):
     title = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     price = models.IntegerField()
-    file = models.ImageField()
+    # file = models.ImageField()
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):

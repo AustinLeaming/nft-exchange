@@ -27,11 +27,11 @@
         <li><a href="/about">About Us</a></li>
         {% if user.is_authenticated %}
         <li><a href="/">Collections</a></li>
+        <li><a href="{% url 'nfts_create' %}">Create NFT</a></li>
         <li><a href="/">My Profile</a></li>
         <li><a href="{% url 'logout' %}">Log Out</a></li>
         {% else %}
         <!-- move the nfts_create into the above if statement when functional -->
-        <li><a href="{% url 'nfts_create' %}">Create NFT</a></li>
         <li><a href="{% url 'signup' %}">Sign Up</a></li>
         <li><a href="{% url 'login' %}">Log In</a></li>
         {% endif %}
