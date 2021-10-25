@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Collectible Details</h1>
+
+<section class="bg-light">
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-5 mt-5">
+          <div class="card mb-3">
+            <img class="card-img" src="https://i.imgur.com/sMBXD2A.png" alt="Card image cap" id="product-detail">
+          </div>
+          <div class="row">
+            <!--Start Controls-->
+
+          </div>
+        </div>
+        <!-- col end -->
+        <div class="col-lg-7 mt-5">
+          <div class="card">
+            <div class="card-body">
+              <h1 class="h2">Pokemon</h1>
+              <p class="h3 py-2">Buy It Now: $2,500</p>
+              <p class="h3 py-2">Starting Bid: $200</p>
+              <p class="py-2">
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-warning"></i>
+                <i class="fa fa-star text-secondary"></i>
+                <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
+              </p>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <h6>Category: Animation</h6>
+                </li>
+                <li class="list-inline-item">
+
+                </li>
+              </ul>
+  
+              <h6>Description:</h6>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <h6>Bid Ends in :</h6>
+                </li>
+                <li class="list-inline-item">
+
+                </li>
+              </ul>
+  
+              <h6>Specification:</h6>
+              <ul class="list-unstyled pb-3">
+                <li>Lorem ipsum dolor sit</li>
+                <li>Amet, consectetur</li>
+                <li>Adipiscing elit,set</li>
+                <li>Duis aute irure</li>
+                <li>Ut enim ad minim</li>
+                <li>Dolore magna aliqua</li>
+                <li>Excepteur sint</li>
+              </ul>
+  
+              <form action="" method="GET">
+                <input type="hidden" name="product-title" value="Activewear">
+                <div class="row">
+                  <div class="col-auto">
+                  </div>
+                </div>
+                <div class="row pb-3">
+                  <div class="col d-grid">
+                    <button type="submit" class="btn btn-dark btn-lg" name="submit" value="buy">Buy It Now</button>
+                  </div>
+                  <div class="col d-grid">
+                    <button type="submit" class="btn btn-dark btn-lg" name="submit" value="addtocard">Make Offer</button>
+                  </div>
+                  <div class="col d-grid">
+                    <button type="submit" class="btn btn-dark btn-lg" name="submit" value="addtocard">Place Bid</button>
+                  </div>
+                </div>
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Comment Section -->
+
+
+<!-- <div class="row">
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ cat.name }}</span>
+        <p>Breed: {{ cat.breed }}</p>
+        <p>Description: {{ cat.description }}</p>
+        {% if cat.age > 0 %}
+          <p>Age: {{ cat.age }}</p>
+        {% else %}
+          <p>Age: Kitten</p>
+        {% endif %}
+      </div>
+      <div class="card-action">
+        <a href="{% url 'cats_update' cat.id %}">Edit</a>
+        <a href="{% url 'cats_delete' cat.id %}">Delete</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s6">
+    <form action="{% url 'add_feeding' cat.id %}" method="post">
+      {% csrf_token %}
+      {{ feeding_form.as_p }}
+      <input type="submit" class="btn" value="Add Feeding">
+    </form>
+    <br>
+    {% if cat.fed_for_today %}
+      <div class="card-panel teal-text center-align">{{cat.name}} has been fed all meals for today</div>
+    {% else %}
+      <div class="card-panel red-text center-align">{{cat.name}} might be hungry</div>
+    {% endif %}
+    <table class="striped">
+      <thead>
+        <tr><th>Date</th><th>Meal</th></tr>
+      </thead>
+      <tbody>
+        {% for feeding in cat.feeding_set.all %}
+          <tr>
+            <td>{{feeding.date}}</td>
+            <td>{{feeding.get_meal_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div> -->
