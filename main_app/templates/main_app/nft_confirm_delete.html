@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div style = "margin-top: 100px;"></div>
   <h1>Delete NFT</h1>
 
-  <h4>Are you sure you want to delete <span class="teal-text">{{ object.name }}</span>?</h4>
+  <h4>Are you sure you want to delete <span class="text-danger">{{ object.title }}</span>?</h4>
 
   <form action="" method="POST">
     {% csrf_token %}
-    <input type="submit" value="Yes - Delete!" class="btn">
-    <a href="{% url 'detail' nft.id %}">Cancel</a>
+    <input type="submit" value="Yes - Delete!" class="btn btn-outline-danger mt-3">
+    <a style="margin-left: 25px;" href="{% url 'detail' nft.id %}">Cancel</a>
   </form>
 {% endblock %}
