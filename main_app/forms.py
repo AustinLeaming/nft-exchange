@@ -4,11 +4,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError  
 from django.forms.fields import EmailField  
 from django.forms.forms import Form  
-
-
-
-
-
+from django.forms import ModelForm
+from .models import Comment
 
 class CustomUserCreationForm(UserCreationForm):  
     username = forms.CharField(label='username', min_length=5, max_length=150)  
@@ -49,4 +46,7 @@ class CustomUserCreationForm(UserCreationForm):
         )  
         return user
   
-    
+class CommentForm(ModelForm):
+  class Meta:
+    model = Comment
+    fields = ['text', 'rating']
