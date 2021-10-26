@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.views.generic.edit import CreateView
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Nft
 from django.contrib.auth import forms  
@@ -18,18 +19,24 @@ BUCKET = 'tokenize-nft-app'
 
 # Create your views here.
 
-class NftUpdate(UpdateView):
+class NftUpdate(LoginRequiredMixin, UpdateView):
     model = Nft
     fields = ['price', 'description']
 
-class NftDelete(DeleteView):
+class NftDelete(LoginRequiredMixin, DeleteView):
     model = Nft
     success_url = '/nfts/'
 
-class NftCreate(CreateView):
+class NftCreate(LoginRequiredMixin, CreateView):
     model = Nft
     fields = '__all__'
     success_url = '/nfts/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
 
 
 def signup(request):
@@ -52,21 +59,13 @@ def signup(request):
 
  
 
-class CatCreate(LoginRequiredMixin, CreateView):
-    model = Nft
-    fields = ['title', 'email', 'price', 'ffile']
-    
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
-
-
 
 
 def home(request):
     return render(request, 'home.html')
     # ^ change to render when home page design comes in
 
+@login_required
 def nfts_detail(request, nft_id):
     nft = Nft.objects.get(id=nft_id)
     comment_form = CommentForm()
@@ -74,6 +73,7 @@ def nfts_detail(request, nft_id):
     'nft': nft, 'comment_form': comment_form
     })
 
+@login_required
 def nfts_index(request):
     nfts = Nft.objects.all()
     return render(request, 'nfts/index.html', {'nfts': nfts})
@@ -81,6 +81,8 @@ def nfts_index(request):
 def about(request):
     return render(request, 'about.html')
 
+
+@login_required
 def add_comment(request, nft_id):
     form = CommentForm(request.POST)
     if form.is_valid():

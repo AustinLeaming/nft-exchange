@@ -46,6 +46,8 @@ class CustomUserCreationForm(UserCreationForm):
            
         )  
         return user
+
+
   
 class CommentForm(ModelForm):
   text = forms.CharField(
