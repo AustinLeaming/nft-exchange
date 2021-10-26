@@ -13,6 +13,7 @@
               {% empty %}  
                 <div class="card-img">No Photo</div>
               {% endfor %}
+              <a class="mt-3 btn btn-outline-success btn-lg btn-block" href="{% url 'add_photo' nft.id %}">Add Photo</a>
               <a class="mt-3 btn btn-outline-primary btn-lg btn-block" href="{% url 'nfts_update' nft.id %}">Edit Post</a>
               <a class="mt-3 btn btn-outline-danger btn-lg btn-block" href="{% url 'nfts_delete' nft.id %}">Delete Post</a>
           </div>
@@ -34,7 +35,7 @@
                 <i class="fa fa-star text-warning"></i>
                 <i class="fa fa-star text-warning"></i>
                 <i class="fa fa-star text-secondary"></i>
-                <span class="list-inline-item text-dark">Rating 4.8 | 36 Comments</span>
+                <span class="list-inline-item text-dark">Rating 4.8 | {{ nft.comment_set.all|length }} comments</span>
               </p>
               <ul class="list-inline">
                 <!-- <li class="list-inline-item">
