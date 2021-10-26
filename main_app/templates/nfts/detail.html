@@ -35,7 +35,14 @@
                 <i class="fa fa-star text-warning"></i>
                 <i class="fa fa-star text-warning"></i>
                 <i class="fa fa-star text-secondary"></i>
-                <span class="list-inline-item text-dark">Rating 4.8 | {{ nft.comment_set.all|length }} comments</span>
+                <span class="list-inline-item text-dark">
+                  
+                  {% if nft.comment_set.all|length > 0 %}
+                    Rating {{ nft.get_rating }} | {{ nft.comment_set.all|length }} comments</span>
+                  {% else %}
+                    No ratings or comments
+                  {% endif %}
+                    
               </p>
               <ul class="list-inline">
                 <!-- <li class="list-inline-item">
