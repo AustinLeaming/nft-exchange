@@ -93,7 +93,7 @@
     </div>
   </section>
 
-      Comments
+      <h3>Comments:</h3>
 <!-- Comment Section -->
 
   <form action="{% url 'add_comment' nft.id %}" method="POST">
@@ -109,8 +109,8 @@
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
+        <p>Rating: {{ comment.rating }}</p>
         <p>{{ comment.text }}</p>
-        <p>{{ comment.rating }}</p>
       </blockquote>
     </div>
   </div>
