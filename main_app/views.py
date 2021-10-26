@@ -22,14 +22,30 @@ BUCKET = 'tokenize-nft-app'
 class NftUpdate(LoginRequiredMixin, UpdateView):
     model = Nft
     fields = ['price', 'description']
+    success_url = '/nfts/'
+    
+
+
+    
 
 class NftDelete(LoginRequiredMixin, DeleteView):
     model = Nft
     success_url = '/nfts/'
 
+
+
+
+    # def post_remove(request, nft_id):
+    #    item = Nft.objects.get(pk=nft_id)
+    #    if request.user == item.user:
+    #        Nft.objects.filter(id=nft_id).delete()
+    #        return redirect('nfts:mynfts')
+   
+
+
 class NftCreate(LoginRequiredMixin, CreateView):
     model = Nft
-    fields = '__all__'
+    fields = ['title', 'description', 'price']
     success_url = '/nfts/'
 
     def form_valid(self, form):
