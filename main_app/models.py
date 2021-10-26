@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User 
 
 
 
@@ -17,7 +18,7 @@ class Nft(models.Model):
     email = models.CharField(max_length=100)
     price = models.IntegerField()
     # file = models.ImageField()
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
