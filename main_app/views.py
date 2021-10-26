@@ -9,7 +9,7 @@ from .forms import CommentForm
 
 class NftUpdate(UpdateView):
     model = Nft
-    fields = ['price']
+    fields = ['price', 'description']
 
 class NftDelete(DeleteView):
     model = Nft

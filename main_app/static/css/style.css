@@ -80,6 +80,15 @@ footer{
 
 }
 
+input#id_text{
+    height: 150px;
+    width: 300px;
+}
+
+p > label{
+    display: none;
+}
+
   @media(max-width: 600px){
     .toggle-button{
       display: flex;
