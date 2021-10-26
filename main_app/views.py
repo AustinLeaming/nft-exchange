@@ -1,6 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.views.generic.edit import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Nft
+from django.contrib.auth import forms  
+from django.contrib import messages  
+from .forms import CustomUserCreationForm  
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Nft
 from .forms import CommentForm
@@ -20,21 +26,37 @@ class NftCreate(CreateView):
     fields = '__all__'
     success_url = '/nfts/'
 
+
 def signup(request):
     error_message = ''
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')
+            return redirect('/nfts')
         else:
             error_message = 'Invalid sign up - try again'
-            form = UserCreationForm()
-            context = {'form': form, 'error_message': error_message}
-            return render(request, 'registration/signup.html', context)
-# dont need else    
-    return render(request, 'registration/signup.html')
+        form = CustomUserCreationForm()
+        context = {'form': form, 'error_message': error_message}
+        return render(request, 'registration/signup.html', context)
+    form = CustomUserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
+
+
+
+
+class CatCreate(LoginRequiredMixin, CreateView):
+    model = Nft
+    fields = ['title', 'email', 'price', 'ffile']
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
+
+
 
 def home(request):
     return render(request, 'home.html')
