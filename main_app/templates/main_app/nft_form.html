@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1 style = "margin-top: 100px;"></h1>
   {% if object %}
     <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
   {% else %}
@@ -11,6 +12,7 @@
     <table>
       {{ form.as_table }}
     </table>
-    <input type="submit" value="Submit!" class="btn">
+    <input class="btn btn-outline-primary" type="submit" value="Submit!">
   </form>
+  <div style = "margin-bottom: 300px;"></div>
 {% endblock %}

@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Sign Up</h1>
+<h1 style = "margin-top: 100px;">Become a Tokenizer!</h1>
 
 {% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
 
 <form method="post" action="{% url 'signup' %}">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" class="btn" value="signup">
+  <button class="btn"><input type="submit" class="btn" value="Sign-Up"></button>
 </form>
+<div style = "margin-bottom: 400px;"></div>
 
 {% endblock %}

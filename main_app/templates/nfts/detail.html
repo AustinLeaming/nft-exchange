@@ -8,7 +8,13 @@
       <div class="row">
         <div class="col-lg-5 mt-5">
           <div class="card mb-3">
-            <img class="card-img" src="https://i.imgur.com/sMBXD2A.png" alt="Card image cap" id="product-detail">
+              {% for photo in nft.photo_set.all %}
+              <img class="card-img" src= "{{photo.url}}" alt="Card image cap" id="product-detail">
+              {% empty %}  
+                <div class="card-img">No Photo</div>
+              {% endfor %}
+              <a class="mt-3 btn btn-outline-primary btn-lg btn-block" href="{% url 'nfts_update' nft.id %}">Edit Post</a>
+              <a class="mt-3 btn btn-outline-danger btn-lg btn-block" href="{% url 'nfts_delete' nft.id %}">Delete Post</a>
           </div>
           <div class="row">
             <!--Start Controls-->
@@ -40,8 +46,8 @@
                 </li>
               </ul>
   
-              <!-- <h6>Description:</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temp incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse. Donec condimentum elementum convallis. Nunc sed orci a diam ultrices aliquet interdum quis nulla.</p>
+              <h6>Description:</h6>
+              <p> {{ nft.description }}</p>
               <ul class="list-inline">
                 <li class="list-inline-item">
                   <h6>Bid Ends in :</h6>
@@ -49,7 +55,7 @@
                 <li class="list-inline-item">
 
                 </li>
-              </ul> -->
+              </ul>
   
               <!-- <h6>Specification:</h6>
               <ul class="list-unstyled pb-3">
@@ -70,10 +76,10 @@
                 </div>
                 <div class="row pb-3">
                   <div class="col d-grid">
-                    <a href="{% url 'nfts_update' nft.id %}" class="btn btn-dark btn-lg">Edit</a>
+                    <a href="{% url 'nfts_update' nft.id %}" class="btn btn-dark btn-lg">Buy Now</a>
                   </div>
                   <div class="col d-grid">
-                    <a href="{% url 'nfts_delete' nft.id %}" class="btn btn-dark btn-lg">Delete</a>
+                    <a href="{% url 'nfts_delete' nft.id %}" class="btn btn-dark btn-lg">Make Offer</a>
                   </div>
                   <div class="col d-grid">
                     <button type="submit" class="btn btn-dark btn-lg" name="submit" value="addtocard">Place Bid</button>
@@ -87,12 +93,13 @@
     </div>
   </section>
 
+      <h3>Comments:</h3>
 <!-- Comment Section -->
 
   <form action="{% url 'add_comment' nft.id %}" method="POST">
     {% csrf_token %}
     {{ comment_form.as_p }}
-    <input type="submit" class="btn btn-primary" value='add comment'>
+    <input type="submit" class="btn btn-primary" value='Add Comment'>
   </form>
   
   {% for comment in nft.comment_set.all %}
@@ -102,8 +109,8 @@
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
+        <p>Rating: {{ comment.rating }}</p>
         <p>{{ comment.text }}</p>
-        <p>{{ comment.rating }}</p>
       </blockquote>
     </div>
   </div>

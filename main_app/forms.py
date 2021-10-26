@@ -6,6 +6,7 @@ from django.forms.fields import EmailField
 from django.forms.forms import Form  
 from django.forms import ModelForm
 from .models import Comment
+from django import forms
 
 class CustomUserCreationForm(UserCreationForm):  
     username = forms.CharField(label='username', min_length=5, max_length=150)  
@@ -49,6 +50,14 @@ class CustomUserCreationForm(UserCreationForm):
 
   
 class CommentForm(ModelForm):
+  text = forms.CharField(
+  required=False,
+  widget=forms.Textarea(
+  attrs={"placeholder": "Add a Comment", 'label':''}
+  ),
+  )
+  
+
   class Meta:
     model = Comment
     fields = ['text', 'rating']
