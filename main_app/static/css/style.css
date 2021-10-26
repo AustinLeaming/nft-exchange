@@ -85,10 +85,6 @@ input#id_text{
     width: 200px;
 }
 
-p > label{
-    display: none;
-}
-
   @media(max-width: 600px){
     .toggle-button{
       display: flex;
