@@ -37,4 +37,9 @@ class Comment(models.Model):
     
     nft = models.ForeignKey(Nft, on_delete=models.CASCADE)
 
+class Photo(models.Model):
+    url = models.CharField(max_length=200)
+    nft = models.ForeignKey(Nft, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"Photo for nft_id: {self.nft_id} @{self.url}"
