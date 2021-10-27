@@ -31,6 +31,7 @@ class NftUpdate(LoginRequiredMixin, UpdateView):
 class NftDelete(LoginRequiredMixin, DeleteView):
     model = Nft
     success_url = '/nfts/'
+    
 
 
 

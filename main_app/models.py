@@ -46,3 +46,5 @@ class Photo(models.Model):
 
     def __str__(self):
         return f"Photo for nft_id: {self.nft_id} @{self.url}"
+
+
