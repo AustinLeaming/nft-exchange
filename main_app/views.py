@@ -24,25 +24,10 @@ class NftUpdate(LoginRequiredMixin, UpdateView):
     fields = ['price', 'description']
     success_url = '/nfts/'
     
-
-
-    
-
 class NftDelete(LoginRequiredMixin, DeleteView):
     model = Nft
     success_url = '/nfts/'
-
-
-
-
-    # def post_remove(request, nft_id):
-    #    item = Nft.objects.get(pk=nft_id)
-    #    if request.user == item.user:
-    #        Nft.objects.filter(id=nft_id).delete()
-    #        return redirect('nfts:mynfts')
    
-
-
 class NftCreate(LoginRequiredMixin, CreateView):
     model = Nft
     fields = ['title', 'description', 'price']
@@ -51,9 +36,6 @@ class NftCreate(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.user = self.request.user
         return super().form_valid(form)
-
-
-
 
 def signup(request):
     error_message = ''
@@ -72,14 +54,8 @@ def signup(request):
     context = {'form': form, 'error_message': error_message}
     return render(request, 'registration/signup.html', context)
 
-
- 
-
-
-
 def home(request):
     return render(request, 'home.html')
-    # ^ change to render when home page design comes in
 
 @login_required
 def nfts_detail(request, nft_id):
@@ -97,7 +73,6 @@ def nfts_index(request):
 def about(request):
     return render(request, 'about.html')
 
-
 @login_required
 def add_comment(request, nft_id):
     form = CommentForm(request.POST)
@@ -106,7 +81,6 @@ def add_comment(request, nft_id):
         new_comment.nft_id = nft_id
         new_comment.save()
     return redirect('detail', nft_id=nft_id)
-
 
 def add_photo(request, nft_id):
     photo_file = request.FILES.get('photo-file', None)
@@ -122,6 +96,3 @@ def add_photo(request, nft_id):
         except:
             print('Error occurred when uploading file to S3')
     return redirect('detail', nft_id=nft_id)
-
-
-
