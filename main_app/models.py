@@ -22,12 +22,26 @@ class Nft(models.Model):
     # file = models.ImageField() <--just need charfield
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def get_rating(self):
+        # total = sum(int(review['rating']) for review in Comment)
+        # var = total / Comment.rating.count()
+        if self.comment_set.count() > 0:
+            var = self.comment_set.count()
+            foo = 0
+            for comment in self.comment_set.all():
+                num = int(comment.rating)
+                foo = foo + num
+            average = foo / var
+            return average
+        else:
+            pass
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('detail', kwargs={'nft_id': self.id})
+
 
 
 class Comment(models.Model):
@@ -39,6 +53,7 @@ class Comment(models.Model):
     )
     
     nft = models.ForeignKey(Nft, on_delete=models.CASCADE)
+
 
 class Photo(models.Model):
     url = models.CharField(max_length=200)

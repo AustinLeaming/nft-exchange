@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.navbar-brand{
+    font-size: 2rem;
+    color: black;
+}
+
+.navbar-brand:hover{
+    color: black;
+}
+
+.nav-link{
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    text-transform: uppercase;
+}
+
+.nav-link:hover{
+    color: black;
+}

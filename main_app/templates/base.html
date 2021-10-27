@@ -31,7 +31,6 @@
         <li><a href="/nfts">Explore</a></li>
         <li><a href="/about">About Us</a></li>
         {% if user.is_authenticated %}
-        <li><a href="/">Collections</a></li>
         <li><a href="{% url 'nfts_create' %}">Create NFT</a></li>
         <li><a href="/">My Profile</a></li>
         <li><a href="{% url 'logout' %}">Log Out</a></li>
