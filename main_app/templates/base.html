@@ -31,8 +31,9 @@
         <li><a href="/nfts">Explore</a></li>
         <li><a href="/about">About Us</a></li>
         {% if user.is_authenticated %}
+        <li><a href="/">Collections</a></li>
         <li><a href="{% url 'nfts_create' %}">Create NFT</a></li>
-        <li><a href="/">My Profile</a></li>
+        <li><a href="/profile">My Profile</a></li>
         <li><a href="{% url 'logout' %}">Log Out</a></li>
         {% else %}
         <!-- move the nfts_create into the above if statement when functional -->
@@ -53,7 +54,7 @@
   
 <!-- Footer -->
 <footer class="text-center text-lg-start" style = "background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%); text-decoration: none;
-color: rgba(255, 255, 255, 0.7); margin-top: 100px; margin-bottom: 0;">
+color: rgba(255, 255, 255, 0.7); margin-top: 100px;">
   <!-- Section: Social media -->
   <section
     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
@@ -101,7 +102,8 @@ color: rgba(255, 255, 255, 0.7); margin-top: 100px; margin-bottom: 0;">
             <i class="fas fa-coins me-3"></i>Tokenize
           </h6>
           <p>
-           This 
+            Here you can use rows and columns to organize your footer content. Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit.
           </p>
         </div>
         <!-- Grid column -->
@@ -110,37 +112,19 @@ color: rgba(255, 255, 255, 0.7); margin-top: 100px; margin-bottom: 0;">
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Technologies Used
+            Products
           </h6>
           <p>
-            <div href="#!" class="text-reset">Django</div>
+            <a href="#!" class="text-reset">Angular</a>
           </p>
           <p>
-            <div href="#!" class="text-reset">Python</div>
+            <a href="#!" class="text-reset">React</a>
           </p>
           <p>
-            <div href="#!" class="text-reset">HTML</div>
+            <a href="#!" class="text-reset">Vue</a>
           </p>
           <p>
-            <div href="#!" class="text-reset">CSS</div>
-          </p>
-          <p>
-            <div href="#!" class="text-reset">Javascript</div>
-          </p>
-          <p>
-            <div href="#!" class="text-reset">PostgresSQL</div>
-          </p>
-          <p>
-            <div href="#!" class="text-reset">AWS</div>
-          </p>
-          <p>
-            <div href="#!" class="text-reset">Heroku</div>
-          </p>
-          <p>
-            <div href="#!" class="text-reset">Git</div>
-          </p>
-          <p>
-            <div href="#!" class="text-reset">Bootstrap</div>
+            <a href="#!" class="text-reset">Laravel</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -151,8 +135,18 @@ color: rgba(255, 255, 255, 0.7); margin-top: 100px; margin-bottom: 0;">
           <h6 class="text-uppercase fw-bold mb-4">
             Useful links
           </h6>
-          <p><i class="fab fa-github me-3"></i><a class="text-reset" href="https://github.com/AustinLeaming/nft-exchange">Project Repo</a></p>
-
+          <p>
+            <a href="#!" class="text-reset">Pricing</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Settings</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Orders</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Help</a>
+          </p>
         </div>
         <!-- Grid column -->
 
@@ -162,10 +156,13 @@ color: rgba(255, 255, 255, 0.7); margin-top: 100px; margin-bottom: 0;">
           <h6 class="text-uppercase fw-bold mb-4">
             Contact
           </h6>
-        
-          <p><i class="fab fa-linkedin me-3"></i><a class="text-reset" href="https://www.linkedin.com/in/dbhinton/">David Hinton</a></p>
-          <p><i class="fab fa-linkedin me-3"></i><a class="text-reset" href="https://www.linkedin.com/in/austin-leaming/">Austin Leaming</a></p>
-          <p><i class="fab fa-linkedin me-3"></i><a class="text-reset" href="https://www.linkedin.com/in/harinder-grewal-01/">Harinder Grewal</a></p>
+          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+          <p>
+            <i class="fas fa-envelope me-3"></i>
+            info@example.com
+          </p>
+          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
         </div>
         <!-- Grid column -->
       </div>

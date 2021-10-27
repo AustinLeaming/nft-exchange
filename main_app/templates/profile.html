@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 style="margin-top: 10%;">All NFT's</h1>
+<h1 style="margin-top: 10%;">My Profile</h1>
 <div class="products row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
   {% for nft in nfts %}
   <a href="/nfts/{{ nft.id }}" style="text-decoration: none; color: black;">
     <div class="product col">
       <div class="card card-product shadow-sm">
-        <img src="{{ nft.photo.url }}" alt="">
+        <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
         <div class="card-body">
           <h2 class="card-title"> {{ nft.title }}</h2>
           <p class="card-text">${{ nft.price }}</p>
