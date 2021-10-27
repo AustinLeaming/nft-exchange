@@ -13,6 +13,8 @@
               {% empty %}  
                 <div class="card-img">No Photo</div>
               {% endfor %}
+          </div>
+          {% if nft.user == user %}
               <a class="mt-3 btn btn-outline-primary btn-lg btn-block" href="{% url 'nfts_update' nft.id %}">Edit Post</a>
               <a class="mt-3 btn btn-outline-danger btn-lg btn-block" href="{% url 'nfts_delete' nft.id %}">Delete Post</a>
               <form action="{% url 'add_photo' nft.id %}" enctype="multipart/form-data" method="POST">
@@ -21,6 +23,8 @@
                 <input type="submit" class="mt-3 btn btn-outline-success btn-lg btn-block" value="Add Photo">
               </form>
             </div>
+          {% endif %}
+          <h1>Current Owner: {{ nft.user }}</h1>
           <div class="row">
             <!--Start Controls-->
           </div>
