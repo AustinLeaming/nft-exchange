@@ -7,7 +7,7 @@
   <a href="/nfts/{{ nft.id }}" style="text-decoration: none; color: black;">
     <div class="product col">
       <div class="card card-product shadow-sm">
-        <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+        <img src="{{ nft.photo }}" alt="">
         <div class="card-body">
           <h2 class="card-title"> {{ nft.title }}</h2>
           <p class="card-text">${{ nft.price }}</p>
