@@ -14,7 +14,7 @@ from .forms import CommentForm
 import uuid
 import boto3
 
-S3_BASE_URL = 'https://s3-us-east-1.amazonaws.com/'
+S3_BASE_URL = 'https://s3.amazonaws.com/'
 BUCKET = 'tokenize-nft-app'
 
 # Create your views here.
@@ -110,8 +110,10 @@ def add_comment(request, nft_id):
 
 def add_photo(request, nft_id):
     photo_file = request.FILES.get('photo-file', None)
+    print(nft_id, "id of nft (above if)")
     if photo_file:
         s3 = boto3.client('s3')
+        print(s3, "s3 var inside if statement") 
         key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
         try:
             s3.upload_fileobj(photo_file, BUCKET, key)
