@@ -23,7 +23,7 @@
                 </form>
               </div>
               {% else %}
-                
+
               {% endif %}
           <div class="row">
             <!--Start Controls-->
@@ -33,17 +33,11 @@
         <div class="col-lg-7 mt-5">
           <div class="card">
             <div class="card-body">
-              <h1>{{ nft.user }} {{ user }}</h1>
-              <h1 class="h2">{{ nft.title }} - *note for developers: add the user who created NFT here?</h1>
+              <h1 class="h2">{{ nft.title }}</h1>
+              <h1 class="h2">{{ nft.user }}</h1>
               <p class="h3 py-2">Buy It Now: ${{ nft.price }}</p>
-              <!-- removed bidding element for now, need to implement for future use -->
-              <!-- <p class="h3 py-2">Starting Bid: $200</p> -->
               <p class="py-2">
                 <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-warning"></i>
-                <i class="fa fa-star text-secondary"></i>
                 <span class="list-inline-item text-dark">
                   
                   {% if nft.comment_set.all|length > 0 %}
@@ -111,12 +105,12 @@
 
   <div class="card mb-3">
     <div class="card-header">
-      Username: *maybe time stamp it?*
+      User: {{ comment.user }}
     </div>
     <div class="card-body">
       <blockquote class="blockquote mb-0">
-        <p>Rating: {{ comment.rating }}</p>
         <p>{{ comment.text }}</p>
+        <footer class="blockquote-footer">Rating: {{ comment.rating }}</footer>
       </blockquote>
     </div>
   </div>
