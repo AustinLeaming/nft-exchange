@@ -75,8 +75,7 @@ def signup(request):
 
 
  
-def profile(request):
-    return render(request, 'profile.html')
+
 
 
 def home(request):
@@ -124,6 +123,17 @@ def add_photo(request, nft_id):
         except:
             print('Error occurred when uploading file to S3')
     return redirect('detail', nft_id=nft_id)
+
+
+
+
+
+
+
+@login_required
+def profile(request):
+    nfts = Nft.objects.filter(user=request.user)
+    return render(request, 'profile.html', {'nfts': nfts})
 
 
 
