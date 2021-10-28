@@ -1,20 +1,31 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
+{% if nft.user == user %}
+  
+{% else %}
+  
+{% endif %}
+
 <h1 style="margin-top: 10%;">All NFT's</h1>
 <div class="products row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
   {% for nft in nfts %}
   <a href="/nfts/{{ nft.id }}" style="text-decoration: none; color: black;">
     <div class="product col">
       <div class="card card-product shadow-sm">
-        {% for photo in nft.photo_set.all %}
-        <img class="card-img" src="{{photo.url}}" alt="Card image cap" id="product-detail">
-      {% empty %}  
-      <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
-      {% endfor %}
+        <img src="{% for photo in nft.photo_set.all %}
+        {% if photo.url %}
+        {{ photo.url }}
+
+        {% else %}
+        https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image
+        {% endif %}
+
+      {% endfor %}" alt="">
         <div class="card-body">
           <h2 class="card-title"> {{ nft.title }}</h2>
-          <p class="card-text">${{ nft.price }}</p>
+          <p class="card-text">Price: ${{ nft.price }}</p>
         </div>
       </div>
     </div>
