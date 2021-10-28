@@ -24,13 +24,20 @@
       
       {% for i in coins %}
       <div class="product col">
-        <div class="card card-product shadow-sm">
-          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+        <div class="card shadow-sm">
           <div class="card-body">
-            <div class="card-header">{{ i.name }} - {{ i.symbol }}</div>
-            <p class="card-text">
-              Current Price: ${{ i.quote.USD.price }}
-            </p>
+            <h5 class="card-title">{{ i.name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ i.symbol }}</h6>
+            <h5 class="card-title">
+              Current Price
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">$
+              {% if i.quote.USD.price < 1 %}
+                {{ i.quote.USD.price|floatformat:-6 }}
+              {% else %}
+                {{ i.quote.USD.price|floatformat:-2 }}
+              {% endif %}
+            </h6>
           </div>
         </div>
       </div>

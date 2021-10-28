@@ -70,7 +70,7 @@ def home(request):
     # when I send the url for the API request, fill in the params for this specifically
     params = {
         'start': '1',
-        'limit': '8',
+        'limit': '16',
         'convert': 'USD'
     }
     # this is now the return value for the API request
