@@ -74,8 +74,8 @@ def home(request):
 
     coins = json['data']
 
-    for x in coins:
-        print(x)
+    # for x in coins:
+    #     print(x)
     return render(request, 'home.html', {'coins': coins})
 
 @login_required

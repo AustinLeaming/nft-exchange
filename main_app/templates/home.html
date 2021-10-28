@@ -71,9 +71,9 @@
         <div class="card card-product shadow-sm">
           <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
           <div class="card-body">
-            <h2 class="card-title">{{ i.symbol }}</h2>
+            <div class="card-header">{{ i.name }} - {{ i.symbol }}</div>
             <p class="card-text">
-              ${{ i.quote.USD.price }}
+              Current Price: ${{ i.quote.USD.price }}
             </p>
           </div>
         </div>
