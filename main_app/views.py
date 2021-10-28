@@ -13,6 +13,7 @@ from .models import Nft, Photo
 from .forms import CommentForm
 import uuid
 import boto3
+import requests
 
 S3_BASE_URL = 'https://s3.amazonaws.com/'
 BUCKET = 'tokenize-nft-app'
@@ -55,7 +56,27 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 def home(request):
-    return render(request, 'home.html')
+    import apikey
+    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+
+    headers = {
+    'Accepts': 'application/json',
+    'X-CMC_PRO_API_KEY': apikey.API_KEY,
+    }
+
+    params = {
+        'start': '1',
+        'limit': '5',
+        'convert': 'USD'
+    }
+
+    json = requests.get(url, params=params, headers=headers).json()
+
+    coins = json['data']
+
+    for x in coins:
+        print(x['symbol'], x['quote']['USD']['price'])
+    return render(request, 'home.html', {'coins': coins})
 
 @login_required
 def nfts_detail(request, nft_id):
