@@ -14,6 +14,7 @@ from .forms import CommentForm
 import uuid
 import boto3
 import requests
+import os
 
 S3_BASE_URL = 'https://s3.amazonaws.com/'
 BUCKET = 'tokenize-nft-app'
@@ -56,17 +57,17 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 def home(request):
-    apikey = '567e6f1c-2e4b-477c-92c0-38971a0e5889'
+    api_key = os.environ['apikey']
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
     headers = {
     'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': apikey
+    'X-CMC_PRO_API_KEY': api_key
     }
 
     params = {
         'start': '1',
-        'limit': '4',
+        'limit': '8',
         'convert': 'USD'
     }
 
