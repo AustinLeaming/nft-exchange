@@ -31,9 +31,8 @@
         <li><a href="/nfts">Explore</a></li>
         <li><a href="/about">About Us</a></li>
         {% if user.is_authenticated %}
-        <li><a href="/">Collections</a></li>
         <li><a href="{% url 'nfts_create' %}">Create NFT</a></li>
-        <li><a href="/profile">My Profile</a></li>
+        <li><a href="/profile">{{ user }}'s Profile</a></li>
         <li><a href="{% url 'logout' %}">Log Out</a></li>
         {% else %}
         <!-- move the nfts_create into the above if statement when functional -->
@@ -102,7 +101,7 @@ color: rgba(255, 255, 255, 0.7); margin-top: 100px;">
             <i class="fas fa-coins me-3"></i>Tokenize
           </h6>
           <p>
-           This 
+           Your go-to marketplace for NFT's!
           </p>
         </div>
         <!-- Grid column -->
