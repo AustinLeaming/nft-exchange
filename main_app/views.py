@@ -57,26 +57,27 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 def home(request):
+    # Grab the api key from the .env file
     api_key = os.environ['apikey']
+    # This is the Url from the docs to grab the specific info I want 
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
+    # when I send the url for the API request, fill in the header with this
     headers = {
     'Accepts': 'application/json',
     'X-CMC_PRO_API_KEY': api_key
     }
-
+    # when I send the url for the API request, fill in the params for this specifically
     params = {
         'start': '1',
         'limit': '8',
         'convert': 'USD'
     }
-
+    # this is now the return value for the API request
     json = requests.get(url, params=params, headers=headers).json()
-
+    # save it in a variable so we can inject it into the html page
     coins = json['data']
 
-    # for x in coins:
-    #     print(x)
     return render(request, 'home.html', {'coins': coins})
 
 @login_required
@@ -122,5 +123,5 @@ def add_photo(request, nft_id):
 @login_required
 def profile(request):
     nfts = Nft.objects.filter(user=request.user)
-    return render(request, 'profile.html', {'nfts': nfts})
+    return render(request, 'nfts/profile.html', {'nfts': nfts})
 
