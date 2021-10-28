@@ -9,6 +9,7 @@ charset-normalizer==2.0.7
 decorator==5.1.0
 dj-database-url==0.5.0
 Django==3.2.8
+django-environ==0.8.1
 django-heroku==0.3.1
 -e git+git://github.com/danawoodman/django-reviews.git@b8daab8ae9aeed1b93556d6ec768bcb89087ee25#egg=django_reviews
 gunicorn==20.1.0
