@@ -7,10 +7,10 @@
   <a href="/nfts/{{ nft.id }}" style="text-decoration: none; color: black;">
     <div class="product col">
       <div class="card card-product shadow-sm">
-        {% for photo in nft.photo_set.all %}
+      {% for photo in nft.photo_set.all %}
         <img class="card-img" src="{{photo.url}}" alt="Card image cap" id="product-detail">
       {% empty %}  
-      <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
+        <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
       {% endfor %}
         <div class="card-body">
           <h2 class="card-title"> {{ nft.title }}</h2>
