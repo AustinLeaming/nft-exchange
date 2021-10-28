@@ -56,17 +56,17 @@ def signup(request):
     return render(request, 'registration/signup.html', context)
 
 def home(request):
-    import apikey
+    apikey = '567e6f1c-2e4b-477c-92c0-38971a0e5889'
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
     headers = {
     'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': apikey.API_KEY,
+    'X-CMC_PRO_API_KEY': apikey
     }
 
     params = {
         'start': '1',
-        'limit': '5',
+        'limit': '4',
         'convert': 'USD'
     }
 
@@ -75,7 +75,7 @@ def home(request):
     coins = json['data']
 
     for x in coins:
-        print(x['symbol'], x['quote']['USD']['price'])
+        print(x)
     return render(request, 'home.html', {'coins': coins})
 
 @login_required

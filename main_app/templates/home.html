@@ -61,46 +61,24 @@
   <div class="container py-5">
     <div class="row pb-3">
       <div class="col-12 text-start">
-        <h2 class="h4">View All</h2>
+        <h2 class="h4">Top Bitcoins</h2>
       </div>
     </div>
     <div class="products row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+      
+      {% for i in coins %}
       <div class="product col">
         <div class="card card-product shadow-sm">
           <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
           <div class="card-body">
-            <h2 class="card-title">Product 1</h2>
+            <h2 class="card-title">{{ i.symbol }}</h2>
             <p class="card-text">
-              Lorem ipsum dolor sit amet
+              ${{ i.quote.USD.price }}
             </p>
           </div>
         </div>
       </div>
-      <div class="product col">
-        <div class="card card-product shadow-sm">
-          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
-          <div class="card-body">
-            <h2 class="card-title">{{ coins.symbol }}</h2>
-            <p class="card-text">lorem ipsum dolor sit namet</p>
-          </div>
-        </div>
-      </div>      <div class="product col">
-        <div class="card card-product shadow-sm">
-          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
-          <div class="card-body">
-            <h2 class="card-title">Product 3</h2>
-            <p class="card-text">lorem ipsum dolor sit namet</p>
-          </div>
-        </div>
-      </div>      <div class="product col">
-        <div class="card card-product shadow-sm">
-          <img src="https://dummyimage.com/300x300/dadada/9a9a9a.jpg&text=dummy+product+image" alt="">
-          <div class="card-body">
-            <h2 class="card-title">Product 4</h2>
-            <p class="card-text">lorem ipsum dolor sit namet</p>
-          </div>
-        </div>
-      </div>    
+      {% endfor %}  
       </div>
     </div>
   </div>
