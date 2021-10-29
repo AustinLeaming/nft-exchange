@@ -14,6 +14,8 @@ During development, a [Trello board](https://trello.com/b/kMGKe71Y/project-3) wa
 
 [Link to Github Repo](https://github.com/AustinLeaming/nft-exchange/edit/main/README.md#:~:text=/-,nft-exchange,-Public)
 
+[Link to pitch deck](https://docs.google.com/presentation/d/1cAe1j8EfgUmRdmk-17zI77WWOWLCBQRyL46QI-zM5qU/edit#slide=id.p)
+
 # Key features
 - Visitors to the app can browse the collection of images and view the comments and ratings on those specific images
 - Authenticated users are able to upload images and comment and rate on other users
