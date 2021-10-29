@@ -1,5 +1,7 @@
 # NFT Exchange
 A social media platform for sharing NFT's!
+[Heroku Link](https://sei-nft-exchange.herokuapp.com/nfts/)
+
 
 # Early stages
 ![Home page](https://i.imgur.com/wBYo73K.png)
