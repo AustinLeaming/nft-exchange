@@ -39,3 +39,7 @@ During development, a [Trello board](https://trello.com/b/kMGKe71Y/project-3) wa
 - AWS
 - Heroku
 - Git
+
+# Icebox ideas 
+- Create a bidding system that allows user to bid and purchase NFT's
+- Create a ownership history log that shows who has owned what NFT
